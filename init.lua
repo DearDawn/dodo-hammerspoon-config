@@ -114,7 +114,11 @@ end)
 hs.hotkey.bind(PUSH_KEY, 'forwarddelete', function()
     hs.alert("重置布局")
     for k, v in pairs(APP_LAYOUT) do
-        hs.layout.apply({v})
+        if (type(v) == 'string') then
+            hs.layout.apply({v})
+        else
+            hs.layout.apply(v)
+        end
     end
 end)
 

@@ -34,7 +34,8 @@ local APP = {
     ["_VSCode"] = "Code",
     ["Finder"] = "Finder",
     ["ChromeCanary"] = "Google Chrome Canary",
-    ["DIDA"] = "滴答清单"
+    ["DIDA"] = "TickTick",
+    ["_DIDA"] = "滴答清单"
 }
 
 -- 配置应用快捷键
@@ -42,9 +43,10 @@ local APP_KEY = {
     [APP.Charles] = "c",
     [APP.iTerm2] = "i",
     [APP.Finder] = "e",
-    [APP.Chrome] = "3",
+    [APP.Lark] = "1",
     [APP.VSCode] = "2",
-    [APP.Lark] = "1"
+    [APP.Chrome] = "3",
+    [APP.DIDA] = "4"
 }
 
 local APP_LAYOUT = {
@@ -55,7 +57,7 @@ local APP_LAYOUT = {
     [APP.ChromeCanary] = {APP.ChromeCanary, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.top_7), nil, nil},
     [APP.Chrome] = {APP.Chrome, nil, SCREEN.K4, hs.layout.maximized, nil, nil},
     [APP._Lark] = {APP._Lark, nil, SCREEN.MAC, hs.layout.maximized, nil, nil},
-    [APP.DIDA] = {APP.DIDA, nil, SCREEN.MAC, hs.layout.maximized, nil, nil}
+    [APP._DIDA] = {APP._DIDA, nil, SCREEN.MAC, hs.layout.maximized, nil, nil}
 }
 
 module.ALT = ALT
