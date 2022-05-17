@@ -7,8 +7,8 @@ local SCREEN = {
     ["MAC"] = "Built-in Retina Display",
     -- Built-in Retina Display, note the % to escape the hyphen repetition character
     ["_MAC"] = "Built%-in Retina Display",
-    ["K4"] = "DELL U2720Q",
-    ["K2"] = "",
+    -- ["K4"] = "DELL U2720Q",
+    ["K4"] = "PHL 245B9",
     ["K1"] = "DELL P2719HC"
 }
 
@@ -27,7 +27,9 @@ local LAYOUT = {
 local APP = {
     ["Charles"] = "Charles",
     ["iTerm2"] = "iTerm2",
+    ["iTerm"] = "iTerm",
     ["Lark"] = "Lark",
+    ["WeChat"] = "WeChat",
     ["_Lark"] = "飞书",
     ["Chrome"] = "Google Chrome",
     ["VSCode"] = "Visual Studio Code",
@@ -41,12 +43,13 @@ local APP = {
 -- 配置应用快捷键
 local APP_KEY = {
     [APP.Charles] = "c",
-    [APP.iTerm2] = "i",
+    [APP.iTerm] = "i",
     [APP.Finder] = "e",
     [APP.Lark] = "1",
     [APP.VSCode] = "2",
     [APP.Chrome] = "3",
-    [APP.DIDA] = "4"
+    [APP.DIDA] = "4",
+    [APP.WeChat] = "5"
 }
 
 local APP_LAYOUT = {
@@ -57,7 +60,8 @@ local APP_LAYOUT = {
     [APP.ChromeCanary] = {APP.ChromeCanary, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.top_7), nil, nil},
     [APP.Chrome] = {APP.Chrome, nil, SCREEN.K4, hs.layout.maximized, nil, nil},
     [APP._Lark] = {APP._Lark, nil, SCREEN.MAC, hs.layout.maximized, nil, nil},
-    [APP._DIDA] = {APP._DIDA, nil, SCREEN.MAC, hs.layout.maximized, nil, nil}
+    [APP._DIDA] = {APP._DIDA, nil, SCREEN.MAC, hs.layout.maximized, nil, nil},
+    [APP.DIDA] = {APP.DIDA, nil, SCREEN.MAC, hs.layout.maximized, nil, nil}
 }
 
 module.ALT = ALT
