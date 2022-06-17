@@ -35,7 +35,7 @@ local LAYOUT = {
     ["bottom_5"] = {0, 0.5, 1, 0.5},
     ["bottom_3"] = {0, 0.7, 1, 0.3},
     ["middle"] = {0.05, 0.05, 0.9, 0.9},
-    ["full"] = {0, 0, 1, 1}
+    ["full"] = {0, 0, 1, 1} -- Utils.getHsRect(LAYOUT.full)
 }
 
 -- 带下划线的给布局用，不带的给快捷键唤醒用，这里不一致，怪难受的
@@ -72,15 +72,15 @@ local APP_KEY = {
 }
 
 local APP_LAYOUT = {
-    [APP.Charles] = {APP.Charles, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil},
+    [APP.Charles] = {APP.Charles, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
     [APP.iTerm2] = {APP.iTerm2, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil},
-    [APP._VSCode] = {{APP._VSCode, nil, SCREEN.K4, hs.layout.maximized, nil, nil},
+    [APP._VSCode] = {{APP._VSCode, nil, SCREEN.K4, Utils.getHsRect(LAYOUT.full), nil, nil},
                      {nil, "Assets", SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil}},
-    [APP.Chrome] = {APP.Chrome, nil, SCREEN.K4, hs.layout.maximized, nil, nil},
+    [APP.Chrome] = {APP.Chrome, nil, SCREEN.K4, Utils.getHsRect(LAYOUT.full), nil, nil},
     [APP.ChromeCanary] = {APP.ChromeCanary, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.right_6), nil, nil},
-    [APP._WeChat] = {APP._WeChat, nil, SCREEN.MAC, hs.layout.maximized, nil, nil},
-    [APP._Lark] = {APP._Lark, nil, SCREEN.MAC, hs.layout.maximized, nil, nil},
-    [APP._DIDA] = {APP._DIDA, nil, SCREEN.MAC, hs.layout.maximized, nil, nil},
+    [APP._WeChat] = {APP._WeChat, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
+    [APP._Lark] = {APP._Lark, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
+    [APP._DIDA] = {APP._DIDA, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
     [APP._TXT] = {APP._TXT, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil}
 }
 
