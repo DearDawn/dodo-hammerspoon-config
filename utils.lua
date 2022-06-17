@@ -63,8 +63,6 @@ module.push = push
 module.getHsRect = getHsRect
 module.useless = useless
 
-return module
-
 -- DONE 获取键盘码 keycode
 -- other_tap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(e)
 --     local keyboardIdentifier = e:getProperty(hs.eventtap.event.properties.keyboardEventKeyboardType)
@@ -73,3 +71,6 @@ return module
 --     print(e:getKeyCode(), keyboardIdentifier, currentModifiers)
 -- end)
 -- other_tap:start()
+
+return module
+

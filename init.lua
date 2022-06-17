@@ -15,11 +15,11 @@ hs.loadSpoon("MouseFollowsFocus")
 spoon.MouseFollowsFocus:start()
 
 -- [插件] 屏幕自动旋转，不然三屏模式下，我的左侧竖屏有点小问题
-hs.loadSpoon("ToggleScreenRotation")
-spoon.ToggleScreenRotation.rotating_angles = {0, 270}
-spoon.ToggleScreenRotation:bindHotkeys({
-    [SCREEN.K1] = {PUSH_KEY, "r"}
-})
+-- hs.loadSpoon("ToggleScreenRotation")
+-- spoon.ToggleScreenRotation.rotating_angles = {0, 270}
+-- spoon.ToggleScreenRotation:bindHotkeys({
+--     [SCREEN.K1] = {PUSH_KEY, "r"}
+-- })
 
 -- [插件] 自动重载配置文件
 hs.loadSpoon("ReloadConfiguration")
@@ -93,12 +93,12 @@ end)
 -- 三屏模式四区域
 hs.hotkey.bind(PUSH_KEY, "up", function()
     hs.window.focusedWindow():moveToScreen(SCREEN.K1)
-    Utils.push(LAYOUT.top_7)
+    Utils.push(LAYOUT.left_4)
 end)
 
 hs.hotkey.bind(PUSH_KEY, "down", function()
     hs.window.focusedWindow():moveToScreen(SCREEN.K1)
-    Utils.push(LAYOUT.bottom_3)
+    Utils.push(LAYOUT.right_6)
 end)
 
 hs.hotkey.bind(PUSH_KEY, "left", function()
@@ -114,7 +114,7 @@ end)
 hs.hotkey.bind(PUSH_KEY, 'forwarddelete', function()
     hs.alert("重置布局")
     for k, v in pairs(APP_LAYOUT) do
-        if (type(v) == 'string') then
+        if (type(v[1]) == 'string') then
             hs.layout.apply({v})
         else
             hs.layout.apply(v)
@@ -142,4 +142,8 @@ end
 
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
     hs.alert.show("Hello World!")
+end)
+
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "return", function()
+    Config.envChange()
 end)
