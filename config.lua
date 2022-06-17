@@ -19,7 +19,7 @@ function envChange()
     is_home = not is_home
     hs.alert.show(is_home and "Bye World!" or 'Hello World!')
     if is_home then
-        SCREEN.K4 = SCREEN.K4_HOME -- 家里的显示器
+        SCREEN.K4 = SCREEN.K4_HOME
     else
         SCREEN.K4 = SCREEN.K4_WORK
     end
@@ -54,7 +54,8 @@ local APP = {
     ["ChromeCanary"] = "Google Chrome Canary",
     ["DIDA"] = "TickTick",
     ["_DIDA"] = "滴答清单",
-    ["TXT"] = "TextEdit"
+    ["TXT"] = "TextEdit",
+    ["_TXT"] = "文本编辑"
 }
 
 -- 配置应用快捷键
@@ -79,7 +80,8 @@ local APP_LAYOUT = {
     [APP.ChromeCanary] = {APP.ChromeCanary, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.right_6), nil, nil},
     [APP._WeChat] = {APP._WeChat, nil, SCREEN.MAC, hs.layout.maximized, nil, nil},
     [APP._Lark] = {APP._Lark, nil, SCREEN.MAC, hs.layout.maximized, nil, nil},
-    [APP._DIDA] = {APP._DIDA, nil, SCREEN.MAC, hs.layout.maximized, nil, nil}
+    [APP._DIDA] = {APP._DIDA, nil, SCREEN.MAC, hs.layout.maximized, nil, nil},
+    [APP._TXT] = {APP._TXT, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil}
 }
 
 module.ALT = ALT
