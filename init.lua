@@ -31,7 +31,6 @@ hs.loadSpoon("D_HighlightFocus")
 
 -- [开发] 软件启动后自动移到屏幕指定位置
 function applicationWatcher(appName, eventType, appObject)
-    spoon.D_HighlightFocus:watch(appName, eventType, appObject)
     if (eventType == hs.application.watcher.launched) then
         print(appName .. " 已启动")
         if (APP_LAYOUT[appName]) then
