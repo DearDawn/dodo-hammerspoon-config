@@ -42,6 +42,7 @@ function applicationWatcher(appName, eventType, appObject)
             end
         end
     end
+    spoon.D_HighlightFocus:watch(appName, eventType, appObject)
 end
 appWatcher = hs.application.watcher.new(applicationWatcher)
 appWatcher:start()
