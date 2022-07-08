@@ -25,6 +25,10 @@ function envChange()
     end
 end
 
+function isHome()
+    return is_home
+end
+
 local LAYOUT = {
     ["left_5"] = {0, 0, 0.5, 1},
     ["right_5"] = {0.5, 0, 0.5, 1},
@@ -55,13 +59,14 @@ local APP = {
     ["DIDA"] = "TickTick",
     ["_DIDA"] = "滴答清单",
     ["TXT"] = "TextEdit",
-    ["_TXT"] = "文本编辑"
+    ["_TXT"] = "文本编辑",
+    ["_Finder"] = "访达"
 }
 
 -- 配置应用快捷键
 local APP_KEY = {
     [APP.Charles] = "c",
-    [APP.iTerm] = "i",
+    [APP.iTerm2] = "i",
     [APP.Finder] = "e",
     [APP.Lark] = "1",
     [APP.VSCode] = "2",
@@ -81,7 +86,8 @@ local APP_LAYOUT = {
     [APP._WeChat] = {APP._WeChat, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
     [APP._Lark] = {APP._Lark, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
     [APP._DIDA] = {APP._DIDA, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
-    [APP._TXT] = {APP._TXT, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil}
+    [APP._TXT] = {APP._TXT, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil},
+    [APP._Finder] = {APP._Finder, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil}
 }
 
 module.ALT = ALT
@@ -92,5 +98,6 @@ module.APP = APP
 module.APP_KEY = APP_KEY
 module.APP_LAYOUT = APP_LAYOUT
 module.envChange = envChange
+module.isHome = isHome
 
 return module
