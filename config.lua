@@ -66,7 +66,7 @@ local APP = {
 -- 配置应用快捷键
 local APP_KEY = {
     [APP.Charles] = "c",
-    [APP.iTerm2] = "i",
+    [APP.iTerm] = "i",
     [APP.Finder] = "e",
     [APP.Lark] = "1",
     [APP.VSCode] = "2",
