@@ -81,7 +81,7 @@ local APP_LAYOUT = {
     [APP.iTerm2] = {APP.iTerm2, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil},
     [APP._VSCode] = {{APP._VSCode, nil, SCREEN.K4, Utils.getHsRect(LAYOUT.full), nil, nil},
                      {nil, "Assets", SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil}},
-    [APP.Chrome] = {APP.Chrome, nil, SCREEN.K4, Utils.getHsRect(LAYOUT.full), nil, nil},
+    [APP.Chrome] = {APP.Chrome, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.full), nil, nil},
     [APP.ChromeCanary] = {APP.ChromeCanary, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.right_6), nil, nil},
     [APP._WeChat] = {APP._WeChat, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
     [APP._Lark] = {APP._Lark, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},

@@ -151,3 +151,8 @@ end)
 hs.hotkey.bind(PUSH_KEY, "return", function()
     Config.envChange()
 end)
+
+-- 切换 Charles 是否代理 MAC
+hs.hotkey.bind(PUSH_KEY, "P", function()
+    Utils.toggle_charles_os_proxy()
+end)

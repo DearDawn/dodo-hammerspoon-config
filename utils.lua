@@ -58,10 +58,30 @@ function useless()
 
 end
 
+-- 切换 Charles 是否代理 MAC
+function toggle_charles_os_proxy()
+    local application = hs.application.frontmostApplication()
+    hs.application.launchOrFocus("Charles")
+    local charles = hs.appfinder.appFromName("Charles")
+    local macOSProxyMenu = {"Proxy", "macOS Proxy"}
+    local macOSProxy = charles:findMenuItem(macOSProxyMenu)
+
+    if (macOSProxy) then
+        charles:selectMenuItem(macOSProxyMenu)
+        application:activate()
+        if (macOSProxy["ticked"]) then
+            hs.alert.show("关闭 Charles macOS 代理")
+        else
+            hs.alert.show("开启 Charles macOS 代理")
+        end
+    end
+end
+
 module.printTable = printTable
 module.push = push
 module.getHsRect = getHsRect
 module.useless = useless
+module.toggle_charles_os_proxy = toggle_charles_os_proxy
 
 -- DONE 获取键盘码 keycode
 -- other_tap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(e)
