@@ -73,11 +73,18 @@ end) -- top half
 hs.hotkey.bind(PUSH_KEY, "k", function()
     Utils.push(LAYOUT.bottom_5)
 end) -- bottom half
-
--- Center window with some room to see the desktop
+hs.hotkey.bind(PUSH_KEY, "n", function()
+    Utils.push(LAYOUT.left_top)
+end) -- left side
 hs.hotkey.bind(PUSH_KEY, "m", function()
-    Utils.push(LAYOUT.middle)
-end)
+    Utils.push(LAYOUT.right_top)
+end) -- right side
+hs.hotkey.bind(PUSH_KEY, ",", function()
+    Utils.push(LAYOUT.left_bottom)
+end) -- top half
+hs.hotkey.bind(PUSH_KEY, ".", function()
+    Utils.push(LAYOUT.right_bottom)
+end) -- bottom half
 
 -- FullSCREEN
 hs.hotkey.bind(PUSH_KEY, ";", function()
@@ -113,6 +120,10 @@ end)
 hs.hotkey.bind(PUSH_KEY, "right", function()
     hs.window.focusedWindow():moveToScreen(SCREEN._MAC)
     Utils.push(LAYOUT.full)
+end)
+-- 最小化窗口
+hs.hotkey.bind(PUSH_KEY, "/", function()
+    hs.window.focusedWindow():minimize()
 end)
 
 hs.hotkey.bind(PUSH_KEY, 'forwarddelete', function()

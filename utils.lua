@@ -68,6 +68,7 @@ function toggle_charles_os_proxy()
 
     if (macOSProxy) then
         charles:selectMenuItem(macOSProxyMenu)
+        charles:selectMenuItem({"Charles", "Hide Charles"})
         application:activate()
         if (macOSProxy["ticked"]) then
             hs.alert.show("关闭 Charles macOS 代理")
