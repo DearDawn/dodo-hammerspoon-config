@@ -63,7 +63,8 @@ local APP = {
     ["_DIDA"] = "滴答清单",
     ["TXT"] = "TextEdit",
     ["_TXT"] = "文本编辑",
-    ["_Finder"] = "访达"
+    ["_Finder"] = "访达",
+    ["Seal"] = "Seal"
 }
 
 -- 配置应用快捷键
@@ -76,7 +77,8 @@ local APP_KEY = {
     [APP.Chrome] = "3",
     [APP.DIDA] = "z",
     [APP.WeChat] = "w",
-    [APP.TXT] = "t"
+    [APP.TXT] = "t",
+    [APP.Seal] = "s"
 }
 
 local APP_LAYOUT = {

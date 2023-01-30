@@ -36,7 +36,7 @@ function applicationWatcher(appName, eventType, appObject)
         if (APP_LAYOUT[appName]) then
             Utils.printTable(APP_LAYOUT[appName])
             if (type(APP_LAYOUT[appName][1]) == 'string') then
-                hs.layout.apply({APP_LAYOUT[appName]})
+                hs.layout.apply({ APP_LAYOUT[appName] })
             else
                 hs.layout.apply(APP_LAYOUT[appName])
             end
@@ -44,6 +44,7 @@ function applicationWatcher(appName, eventType, appObject)
     end
     spoon.D_HighlightFocus:watch(appName, eventType, appObject)
 end
+
 appWatcher = hs.application.watcher.new(applicationWatcher)
 appWatcher:start()
 
@@ -130,7 +131,7 @@ hs.hotkey.bind(PUSH_KEY, 'forwarddelete', function()
     hs.alert("重置布局")
     for k, v in pairs(APP_LAYOUT) do
         if (type(v[1]) == 'string') then
-            hs.layout.apply({v})
+            hs.layout.apply({ v })
         else
             hs.layout.apply(v)
         end
@@ -166,4 +167,9 @@ end)
 -- 切换 Charles 是否代理 MAC
 hs.hotkey.bind(PUSH_KEY, "P", function()
     Utils.toggle_charles_os_proxy()
+end)
+
+-- 查看 Charles 代理地址
+hs.hotkey.bind(PUSH_KEY, "[", function()
+    Utils.show_charles_os_addr()
 end)

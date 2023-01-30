@@ -63,12 +63,12 @@ function toggle_charles_os_proxy()
     local application = hs.application.frontmostApplication()
     hs.application.launchOrFocus("Charles")
     local charles = hs.appfinder.appFromName("Charles")
-    local macOSProxyMenu = {"Proxy", "macOS Proxy"}
+    local macOSProxyMenu = { "Proxy", "macOS Proxy" }
     local macOSProxy = charles:findMenuItem(macOSProxyMenu)
 
     if (macOSProxy) then
         charles:selectMenuItem(macOSProxyMenu)
-        charles:selectMenuItem({"Charles", "Hide Charles"})
+        charles:selectMenuItem({ "Charles", "Hide Charles" })
         application:activate()
         if (macOSProxy["ticked"]) then
             hs.alert.show("关闭 Charles macOS 代理")
@@ -78,11 +78,25 @@ function toggle_charles_os_proxy()
     end
 end
 
+-- 看看 Charles 的代理地址
+function show_charles_os_addr()
+    hs.application.launchOrFocus("Charles")
+    local charles = hs.appfinder.appFromName("Charles")
+    local macOSProxyMenu = { "Help", "SSL Proxying",
+        "Install Charles Root Certificate on a Mobile Device or Remote Browser" }
+    local macOSProxy = charles:findMenuItem(macOSProxyMenu)
+
+    if (macOSProxy) then
+        charles:selectMenuItem(macOSProxyMenu)
+    end
+end
+
 module.printTable = printTable
 module.push = push
 module.getHsRect = getHsRect
 module.useless = useless
 module.toggle_charles_os_proxy = toggle_charles_os_proxy
+module.show_charles_os_addr = show_charles_os_addr
 
 -- DONE 获取键盘码 keycode
 -- other_tap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(e)
@@ -94,4 +108,3 @@ module.toggle_charles_os_proxy = toggle_charles_os_proxy
 -- other_tap:start()
 
 return module
-
