@@ -27,7 +27,7 @@ spoon.ReloadConfiguration:start()
 hs.alert("重载 Hammerspoon 配置文件")
 
 -- [插件] 我的 -- 自动高亮当前显示器
-hs.loadSpoon("D_HighlightFocus")
+-- hs.loadSpoon("D_HighlightFocus")
 
 -- [开发] 软件启动后自动移到屏幕指定位置
 function applicationWatcher(appName, eventType, appObject)
