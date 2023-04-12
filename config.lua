@@ -66,7 +66,7 @@ local APP = {
     ["TXT"] = "TextEdit",
     ["_TXT"] = "文本编辑",
     ["_Finder"] = "访达",
-    ["Seal"] = "Seal"
+    ["Settings"] = "System Settings.app" -- 系统设置
 }
 
 -- 配置应用快捷键
@@ -82,7 +82,7 @@ local APP_KEY = {
     [APP.DIDA] = "z",
     [APP.WeChat] = "w",
     [APP.TXT] = "t",
-    [APP.Seal] = "s"
+    [APP.Settings] = "s"
 }
 
 local APP_LAYOUT = {
