@@ -86,10 +86,18 @@ end) -- top half
 hs.hotkey.bind(PUSH_KEY, ".", function()
     Utils.push(LAYOUT.right_bottom)
 end) -- bottom half
+hs.hotkey.bind(PUSH_KEY, "'", function()
+    Utils.push(LAYOUT.middle)
+end) -- bottom half
 
 -- FullSCREEN
 hs.hotkey.bind(PUSH_KEY, ";", function()
     Utils.push(LAYOUT.full)
+end)
+
+-- 最小化窗口
+hs.hotkey.bind(PUSH_KEY, "/", function()
+    hs.window.focusedWindow():minimize()
 end)
 
 -- Move active window to previous monitor
@@ -121,10 +129,6 @@ end)
 hs.hotkey.bind(PUSH_KEY, "right", function()
     hs.window.focusedWindow():moveToScreen(SCREEN._MAC)
     Utils.push(LAYOUT.full)
-end)
--- 最小化窗口
-hs.hotkey.bind(PUSH_KEY, "/", function()
-    hs.window.focusedWindow():minimize()
 end)
 
 hs.hotkey.bind(PUSH_KEY, 'forwarddelete', function()

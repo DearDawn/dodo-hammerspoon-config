@@ -41,7 +41,7 @@ local LAYOUT = {
     ["top_5"] = {0, 0, 1, 0.5},
     ["bottom_5"] = {0, 0.5, 1, 0.5},
     ["bottom_3"] = {0, 0.7, 1, 0.3},
-    ["middle"] = {0.05, 0.05, 0.9, 0.9},
+    ["middle"] = {0.22, 0.22, 0.56, 0.56},
     ["full"] = {0, 0, 1, 1} -- Utils.getHsRect(LAYOUT.full)
 }
 
@@ -86,16 +86,16 @@ local APP_KEY = {
 }
 
 local APP_LAYOUT = {
-    [APP.Charles] = {APP.Charles, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
+    [APP.Charles] = {APP.Charles, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT["middle"]), nil, nil},
     [APP.iTerm2] = {APP.iTerm2, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil},
     [APP._VSCode] = {{APP._VSCode, nil, SCREEN.K4, Utils.getHsRect(LAYOUT.full), nil, nil},
                      {nil, "Assets", SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil}},
     [APP.Chrome] = {APP.Chrome, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.full), nil, nil},
     [APP.ChromeCanary] = {APP.ChromeCanary, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.right_6), nil, nil},
-    [APP._WeChat] = {APP._WeChat, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
+    [APP._WeChat] = {APP._WeChat, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.right_bottom), nil, nil},
     [APP._Lark] = {APP._Lark, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
     [APP.Knock] = {APP.Knock, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
-    [APP.Whalek] = {APP.Whalek, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
+    [APP.Whalek] = {APP.Whalek, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT["middle"]), nil, nil},
     [APP._DIDA] = {APP._DIDA, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
     [APP._TXT] = {APP._TXT, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil},
     [APP._Finder] = {APP._Finder, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil}
