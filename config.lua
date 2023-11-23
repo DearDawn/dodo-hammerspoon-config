@@ -66,7 +66,9 @@ local APP = {
     ["TXT"] = "TextEdit",
     ["_TXT"] = "文本编辑",
     ["_Finder"] = "访达",
-    ["Settings"] = "System Settings.app" -- 系统设置
+    ["Safari"] = "Safari",
+    ["Settings"] = "System Settings.app", -- 系统设置
+    ["WYY"] = "NeteaseMusic" -- 网易云音乐
 }
 
 -- 配置应用快捷键
@@ -80,9 +82,11 @@ local APP_KEY = {
     [APP.VSCode] = "2",
     [APP.Chrome] = "3",
     [APP.DIDA] = "z",
-    [APP.WeChat] = "w",
+    -- [APP.WeChat] = "w",
     [APP.TXT] = "t",
-    [APP.Settings] = "s"
+    [APP.Settings] = "s",
+    [APP.Safari] = "f",
+    [APP.WYY] = "w"
 }
 
 local APP_LAYOUT = {
