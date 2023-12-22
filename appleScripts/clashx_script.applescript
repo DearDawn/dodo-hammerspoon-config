@@ -19,7 +19,6 @@ tell application "System Events"
             -- 如果已勾选，则取消勾选 "设置为系统代理"、"增强模式" 和 "出站模式(.*) - 全局连接"
             click systemProxyMenuItem
             click enhancedModeMenuItem
-            click globalModeMenuItem
             -- 勾选 "出站模式(.*) - 规则判断"
             click ruleModeMenuItem
         else
@@ -27,9 +26,8 @@ tell application "System Events"
             -- 如果未勾选，则勾选 "设置为系统代理"、"增强模式" 和 "出站模式(.*) - 全局连接"
             click systemProxyMenuItem
             click enhancedModeMenuItem
+            -- 勾选 "出站模式(.*) - 全局连接"
             click globalModeMenuItem
-            -- 取消勾选 "出站模式(.*) - 规则判断"
-            click ruleModeMenuItem
         end if
     end tell
 end tell
