@@ -177,3 +177,8 @@ end)
 hs.hotkey.bind(PUSH_KEY, "[", function()
     Utils.show_charles_os_addr()
 end)
+
+-- 切换 VPN 代理模式
+hs.hotkey.bind(PUSH_KEY, "]", function()
+    Utils.toggle_clashx_mode()
+end)

@@ -91,12 +91,20 @@ function show_charles_os_addr()
     end
 end
 
+
+-- 切换 VPN 代理模式
+function toggle_clashx_mode()
+    local scriptPath = "./appleScripts/clashx_script.applescript"
+    hs.osascript.applescriptFromFile(scriptPath)
+end
+
 module.printTable = printTable
 module.push = push
 module.getHsRect = getHsRect
 module.useless = useless
 module.toggle_charles_os_proxy = toggle_charles_os_proxy
 module.show_charles_os_addr = show_charles_os_addr
+module.toggle_clashx_mode = toggle_clashx_mode
 
 -- DONE 获取键盘码 keycode
 -- other_tap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(e)
