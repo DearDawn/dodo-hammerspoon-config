@@ -82,11 +82,11 @@ local APP_KEY = {
     [APP.VSCode] = "2",
     [APP.Chrome] = "3",
     [APP.DIDA] = "z",
-    -- [APP.WeChat] = "w",
+    [APP.WeChat] = "w",
     [APP.TXT] = "t",
     [APP.Settings] = "s",
     [APP.Safari] = "f",
-    [APP.WYY] = "w"
+    [APP.WYY] = "y"
 }
 
 local APP_LAYOUT = {
