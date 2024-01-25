@@ -13,27 +13,35 @@ tell application "System Events"
         -- 获取菜单项 "出站模式(.*) - 规则判断"
         set ruleModeMenuItem to menu item "规则判断" of menu 1 of modeSubMenu
         -- 检查 "设置为系统代理" 菜单项的勾选状态
-        set isSystemProxyChecked to value of attribute "AXMenuItemMarkChar" of systemProxyMenuItem
-        if isSystemProxyChecked is equal to "-" then
-            display notification "1111" with title "ClashX Pro"
-            click systemProxyMenuItem
-            click ruleModeMenuItem
-            delay 0.5
-        end if
-        if isSystemProxyChecked is equal to "✓" then
+        -- set isSystemProxyChecked to value of attribute "AXMenuItemMarkChar" of systemProxyMenuItem
+        -- if isSystemProxyChecked is equal to "-" then
+        --     display notification "1111" with title "ClashX Pro"
+        --     click systemProxyMenuItem
+        --     click ruleModeMenuItem
+        --     delay 0.5
+        -- end if
+        -- if isSystemProxyChecked is equal to "✓" then
+        --     display notification "关闭 ClashX 系统全局增强代理" with title "ClashX Pro"
+        --     -- 如果已勾选，则取消勾选 "设置为系统代理"、"增强模式" 和 "出站模式(.*) - 全局连接"
+        --     click systemProxyMenuItem
+        --     click enhancedModeMenuItem
+        --     -- 勾选 "出站模式(.*) - 规则判断"
+        --     click ruleModeMenuItem
+        -- else
+        --     display notification "开启 ClashX 系统全局增强代理" with title "ClashX Pro"
+        --     -- 如果未勾选，则勾选 "设置为系统代理"、"增强模式" 和 "出站模式(.*) - 全局连接"
+        --     click systemProxyMenuItem
+        --     click enhancedModeMenuItem
+        --     -- 勾选 "出站模式(.*) - 全局连接"
+        --     click globalModeMenuItem
+        -- end if
+        set isEnhanceModeChecked to value of attribute "AXMenuItemMarkChar" of enhancedModeMenuItem
+        if isEnhanceModeChecked is equal to "✓" then
             display notification "关闭 ClashX 系统全局增强代理" with title "ClashX Pro"
-            -- 如果已勾选，则取消勾选 "设置为系统代理"、"增强模式" 和 "出站模式(.*) - 全局连接"
-            click systemProxyMenuItem
             click enhancedModeMenuItem
-            -- 勾选 "出站模式(.*) - 规则判断"
-            click ruleModeMenuItem
         else
             display notification "开启 ClashX 系统全局增强代理" with title "ClashX Pro"
-            -- 如果未勾选，则勾选 "设置为系统代理"、"增强模式" 和 "出站模式(.*) - 全局连接"
-            click systemProxyMenuItem
             click enhancedModeMenuItem
-            -- 勾选 "出站模式(.*) - 全局连接"
-            click globalModeMenuItem
         end if
     end tell
 end tell
