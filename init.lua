@@ -131,6 +131,11 @@ hs.hotkey.bind(PUSH_KEY, "right", function()
     Utils.push(LAYOUT.full)
 end)
 
+hs.hotkey.bind(PUSH_KEY, "space", function()
+    -- hs.window.focusedWindow():moveToScreen(SCREEN._MAC)
+    Utils.push(LAYOUT.bottom_middle)
+end)
+
 hs.hotkey.bind(PUSH_KEY, 'forwarddelete', function()
     hs.alert("重置布局")
     for k, v in pairs(APP_LAYOUT) do

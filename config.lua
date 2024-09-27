@@ -42,6 +42,7 @@ local LAYOUT = {
     ["bottom_5"] = {0, 0.5, 1, 0.5},
     ["bottom_3"] = {0, 0.7, 1, 0.3},
     ["middle"] = {0.15, 0.15, 0.7, 0.7},
+    ["bottom_middle"] = {0.25, 0.65, 0.5, 0.35},
     ["full"] = {0, 0, 1, 1} -- Utils.getHsRect(LAYOUT.full)
 }
 
