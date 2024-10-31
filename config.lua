@@ -1,15 +1,15 @@
 local Utils = require('utils')
 module = {}
 
-local ALT = {"⌥"}
-local PUSH_KEY = {"⌃", "⌘", "⌥"}
+local ALT = { "⌥" }
+local PUSH_KEY = { "⌃", "⌘", "⌥" }
 local SCREEN = {
     ["MAC"] = "Built-in Retina Display",
     -- Built-in Retina Display, note the % to escape the hyphen repetition character
     ["_MAC"] = "Built%-in Retina Display",
     ["K4"] = "DELL U2720Q",
     ["K4_WORK"] = "PHL 241B8Q", -- 公司的显示器
-    ["K4_HOME"] = "PHL 245B9", -- 家里的显示器
+    ["K4_HOME"] = "PHL 245B9",  -- 家里的显示器
     ["K1"] = "DELL P2719HC"
 }
 
@@ -30,20 +30,21 @@ function isHome()
 end
 
 local LAYOUT = {
-    ["left_5"] = {0, 0, 0.5, 1},
-    ["left_top"] = {0, 0, 0.5, 0.5},
-    ["left_bottom"] = {0, 0.5, 0.5, 0.5},
-    ["right_5"] = {0.5, 0, 0.5, 1},
-    ["right_top"] = {0.5, 0, 0.5, 0.5},
-    ["right_bottom"] = {0.5, 0.5, 0.5, 0.5},
-    ["left_4"] = {0, 0, 0.4, 1},
-    ["right_6"] = {0.4, 0, 0.6, 1},
-    ["top_5"] = {0, 0, 1, 0.5},
-    ["bottom_5"] = {0, 0.5, 1, 0.5},
-    ["bottom_3"] = {0, 0.7, 1, 0.3},
-    ["middle"] = {0.15, 0.15, 0.7, 0.7},
-    ["bottom_middle"] = {0.25, 0.65, 0.5, 0.35},
-    ["full"] = {0, 0, 1, 1} -- Utils.getHsRect(LAYOUT.full)
+    ["left_5"] = { 0, 0, 0.5, 1 },
+    ["left_top"] = { 0, 0, 0.5, 0.5 },
+    ["left_bottom"] = { 0, 0.5, 0.5, 0.5 },
+    ["right_5"] = { 0.5, 0, 0.5, 1 },
+    ["right_top"] = { 0.5, 0, 0.5, 0.5 },
+    ["right_bottom"] = { 0.5, 0.5, 0.5, 0.5 },
+    ["left_4"] = { 0, 0, 0.4, 1 },
+    ["right_6"] = { 0.4, 0, 0.6, 1 },
+    ["top_5"] = { 0, 0, 1, 0.5 },
+    ["bottom_5"] = { 0, 0.5, 1, 0.5 },
+    ["bottom_3"] = { 0, 0.7, 1, 0.3 },
+    -- ["middle"] = {0.15, 0.15, 0.7, 0.7},
+    ["middle"] = { 0.2, 0.15, 0.6, 0.7 },
+    ["bottom_middle"] = { 0.25, 0.65, 0.5, 0.35 },
+    ["full"] = { 0, 0, 1, 1 } -- Utils.getHsRect(LAYOUT.full)
 }
 
 -- 带下划线的给布局用，不带的给快捷键唤醒用，这里不一致，怪难受的
@@ -69,7 +70,7 @@ local APP = {
     ["_Finder"] = "访达",
     ["Safari"] = "Safari",
     ["Settings"] = "System Settings.app", -- 系统设置
-    ["WYY"] = "NeteaseMusic" -- 网易云音乐
+    ["WYY"] = "NeteaseMusic"              -- 网易云音乐
 }
 
 -- 配置应用快捷键
@@ -91,19 +92,19 @@ local APP_KEY = {
 }
 
 local APP_LAYOUT = {
-    [APP.Charles] = {APP.Charles, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT["middle"]), nil, nil},
-    [APP.iTerm2] = {APP.iTerm2, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil},
-    [APP._VSCode] = {{APP._VSCode, nil, SCREEN.K4, Utils.getHsRect(LAYOUT.full), nil, nil},
-                     {nil, "Assets", SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil}},
-    [APP.Chrome] = {APP.Chrome, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.full), nil, nil},
-    [APP.ChromeCanary] = {APP.ChromeCanary, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.right_6), nil, nil},
-    [APP._WeChat] = {APP._WeChat, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.right_bottom), nil, nil},
-    [APP._Lark] = {APP._Lark, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
-    [APP.Knock] = {APP.Knock, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
-    [APP.Whalek] = {APP.Whalek, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT["middle"]), nil, nil},
-    [APP._DIDA] = {APP._DIDA, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil},
-    [APP._TXT] = {APP._TXT, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil},
-    [APP._Finder] = {APP._Finder, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil}
+    [APP.Charles] = { APP.Charles, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT["middle"]), nil, nil },
+    [APP.iTerm2] = { APP.iTerm2, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil },
+    [APP._VSCode] = { { APP._VSCode, nil, SCREEN.K4, Utils.getHsRect(LAYOUT.full), nil, nil },
+        { nil,         "Assets", SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil } },
+    [APP.Chrome] = { APP.Chrome, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.full), nil, nil },
+    [APP.ChromeCanary] = { APP.ChromeCanary, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.right_6), nil, nil },
+    [APP._WeChat] = { APP._WeChat, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.right_bottom), nil, nil },
+    [APP._Lark] = { APP._Lark, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil },
+    [APP.Knock] = { APP.Knock, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil },
+    [APP.Whalek] = { APP.Whalek, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT["middle"]), nil, nil },
+    [APP._DIDA] = { APP._DIDA, nil, SCREEN.MAC, Utils.getHsRect(LAYOUT.full), nil, nil },
+    [APP._TXT] = { APP._TXT, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil },
+    [APP._Finder] = { APP._Finder, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.left_4), nil, nil }
 }
 
 module.ALT = ALT

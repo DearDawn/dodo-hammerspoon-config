@@ -41,7 +41,7 @@ function useless()
     caffeine = hs.menubar.new()
     function setCaffeineDisplay(state)
         if state then
-            caffeine:setTitle("小糖牛逼呀")
+            caffeine:setTitle("小糖睡着啦")
         else
             caffeine:setTitle("小糖怎么啦")
         end
@@ -55,7 +55,6 @@ function useless()
         caffeine:setClickCallback(caffeineClicked)
         setCaffeineDisplay(hs.caffeinate.get("displayIdle"))
     end
-
 end
 
 -- 切换 Charles 是否代理 MAC
@@ -90,7 +89,6 @@ function show_charles_os_addr()
         charles:selectMenuItem(macOSProxyMenu)
     end
 end
-
 
 -- 切换 VPN 代理模式
 function toggle_clashx_mode()
