@@ -90,24 +90,28 @@ hs.hotkey.bind(PUSH_KEY, "'", function()
     Utils.push(LAYOUT.middle)
 end) -- bottom half
 
+hs.hotkey.bind(PUSH_KEY, "/", function()
+    Utils.push(LAYOUT.bottom_mid)
+end)
+
 -- FullSCREEN
 hs.hotkey.bind(PUSH_KEY, ";", function()
     Utils.push(LAYOUT.full)
 end)
 
 -- 最小化窗口
-hs.hotkey.bind(PUSH_KEY, "/", function()
-    hs.window.focusedWindow():minimize()
-end)
+-- hs.hotkey.bind(PUSH_KEY, "/", function()
+-- hs.window.focusedWindow():minimize()
+-- end)
 
 -- Move active window to previous monitor
 hs.hotkey.bind(PUSH_KEY, "u", function()
-    hs.window.focusedWindow():moveOneScreenWest()
+    hs.window.focusedWindow():moveOneScreenNorth()
 end)
 
 -- Move active window to next monitor
 hs.hotkey.bind(PUSH_KEY, "i", function()
-    hs.window.focusedWindow():moveOneScreenEast()
+    hs.window.focusedWindow():moveOneScreenSouth()
 end)
 
 -- 三屏模式四区域
