@@ -104,35 +104,31 @@ end)
 -- hs.window.focusedWindow():minimize()
 -- end)
 
--- Move active window to previous monitor
-hs.hotkey.bind(PUSH_KEY, "u", function()
-    hs.window.focusedWindow():moveOneScreenNorth()
-end)
+-- -- Move active window to previous monitor
+-- hs.hotkey.bind(PUSH_KEY, "u", function()
+--     hs.window.focusedWindow():moveOneScreenNorth()
+-- end)
 
--- Move active window to next monitor
-hs.hotkey.bind(PUSH_KEY, "i", function()
-    hs.window.focusedWindow():moveOneScreenSouth()
-end)
+-- -- Move active window to next monitor
+-- hs.hotkey.bind(PUSH_KEY, "i", function()
+--     hs.window.focusedWindow():moveOneScreenSouth()
+-- end)
 
 -- 三屏模式四区域
 hs.hotkey.bind(PUSH_KEY, "up", function()
-    hs.window.focusedWindow():moveToScreen(SCREEN.K1)
-    Utils.push(LAYOUT.left_4)
+    hs.window.focusedWindow():moveOneScreenNorth()
 end)
 
 hs.hotkey.bind(PUSH_KEY, "down", function()
-    hs.window.focusedWindow():moveToScreen(SCREEN.K1)
-    Utils.push(LAYOUT.right_6)
+    hs.window.focusedWindow():moveOneScreenSouth()
 end)
 
 hs.hotkey.bind(PUSH_KEY, "left", function()
-    hs.window.focusedWindow():moveToScreen(SCREEN.K4)
-    Utils.push(LAYOUT.full)
+    hs.window.focusedWindow():moveOneScreenWest()
 end)
 
 hs.hotkey.bind(PUSH_KEY, "right", function()
-    hs.window.focusedWindow():moveToScreen(SCREEN._MAC)
-    Utils.push(LAYOUT.full)
+    hs.window.focusedWindow():moveOneScreenEast()
 end)
 
 hs.hotkey.bind(PUSH_KEY, "space", function()

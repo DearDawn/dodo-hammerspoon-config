@@ -44,7 +44,7 @@ local LAYOUT = {
     ["bottom_mid"] = { 0.2, 0.4, 0.6, 0.6 },
     -- ["middle"] = {0.15, 0.15, 0.7, 0.7},
     ["middle"] = { 0.15, 0.15, 0.7, 0.7 },
-    ["bottom_middle"] = { 0.25, 0.65, 0.5, 0.35 },
+    ["bottom_middle"] = { 0.25, 0.6, 0.5, 0.4 },
     ["full"] = { 0, 0, 1, 1 } -- Utils.getHsRect(LAYOUT.full)
 }
 
@@ -68,6 +68,7 @@ local APP = {
     ["_DIDA"] = "滴答清单",
     ["TXT"] = "TextEdit",
     ["_TXT"] = "文本编辑",
+    ["Typora"] = "Typora",
     ["_Finder"] = "访达",
     ["Safari"] = "Safari",
     ["Settings"] = "System Settings.app", -- 系统设置
@@ -86,7 +87,7 @@ local APP_KEY = {
     [APP.Chrome] = "3",
     [APP.DIDA] = "z",
     [APP.WeChat] = "w",
-    [APP.TXT] = "t",
+    [APP.Typora] = "t",
     [APP.Settings] = "s",
     [APP.Safari] = "f",
     [APP.WYY] = "y"
