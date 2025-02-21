@@ -91,7 +91,7 @@ hs.hotkey.bind(PUSH_KEY, "'", function()
 end) -- bottom half
 
 hs.hotkey.bind(PUSH_KEY, "/", function()
-    Utils.push(LAYOUT.bottom_mid)
+    Utils.push(LAYOUT.bottom_middle)
 end)
 
 -- FullSCREEN
@@ -124,16 +124,18 @@ hs.hotkey.bind(PUSH_KEY, "down", function()
 end)
 
 hs.hotkey.bind(PUSH_KEY, "left", function()
-    hs.window.focusedWindow():moveOneScreenWest()
+    if (hs.window.focusedWindow():screen():name() == SCREEN["MAC"]) then
+        Utils.push(LAYOUT.left_5)
+    else
+        hs.window.focusedWindow():moveOneScreenWest()
+    end
 end)
-
 hs.hotkey.bind(PUSH_KEY, "right", function()
+    -- if (hs.window.focusedWindow():screen():name() ~= SCREEN["MAC"]) then
+    --     Utils.push(LAYOUT.right)
+    -- else
     hs.window.focusedWindow():moveOneScreenEast()
-end)
-
-hs.hotkey.bind(PUSH_KEY, "space", function()
-    -- hs.window.focusedWindow():moveToScreen(SCREEN._MAC)
-    Utils.push(LAYOUT.bottom_middle)
+    -- end
 end)
 
 hs.hotkey.bind(PUSH_KEY, 'forwarddelete', function()
