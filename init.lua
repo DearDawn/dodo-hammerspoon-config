@@ -130,12 +130,13 @@ hs.hotkey.bind(PUSH_KEY, "left", function()
         hs.window.focusedWindow():moveOneScreenWest()
     end
 end)
+
 hs.hotkey.bind(PUSH_KEY, "right", function()
-    -- if (hs.window.focusedWindow():screen():name() ~= SCREEN["MAC"]) then
-    --     Utils.push(LAYOUT.right)
-    -- else
-    hs.window.focusedWindow():moveOneScreenEast()
-    -- end
+    if (hs.window.focusedWindow():screen():name() == SCREEN["MAC"]) then
+        Utils.push(LAYOUT.right_5)
+    else
+        hs.window.focusedWindow():moveOneScreenEast()
+    end
 end)
 
 hs.hotkey.bind(PUSH_KEY, 'forwarddelete', function()
