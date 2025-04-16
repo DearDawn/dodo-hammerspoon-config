@@ -101,7 +101,11 @@ local APP_LAYOUT = {
         { APP._VSCode, nil, SCREEN["XL"], Utils.getHsRect(LAYOUT.full), nil, nil },
         -- { nil,         "Assets", SCREEN.K1,    Utils.getHsRect(LAYOUT.left_4), nil, nil }
     },
-    -- [APP.Chrome] = { APP.Chrome, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.full), nil, nil },
+    [APP.Chrome] = {
+        { APP.Chrome, 'DEV',  SCREEN['XXL'], Utils.getHsRect(LAYOUT["left_5"]),        nil, nil },
+        { APP.Chrome, 'WORK', SCREEN['XXL'], Utils.getHsRect(LAYOUT["right_5"]),       nil, nil },
+        { APP.Chrome, 'DAWN', SCREEN['XL'],  Utils.getHsRect(LAYOUT["bottom_middle"]), nil, nil },
+    },
     -- [APP.ChromeCanary] = { APP.ChromeCanary, nil, SCREEN.K1, Utils.getHsRect(LAYOUT.right_6), nil, nil },
     -- [APP._WeChat] = { APP._WeChat, nil, SCREEN["MAC"], Utils.getHsRect(LAYOUT.right_bottom), nil, nil },
     -- [APP._Lark] = { APP._Lark, nil, SCREEN["MAC"], Utils.getHsRect(LAYOUT.full), nil, nil },

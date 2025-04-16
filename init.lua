@@ -38,11 +38,11 @@ function applicationWatcher(appName, eventType, appObject)
             if (type(APP_LAYOUT[appName][1]) == 'string') then
                 hs.layout.apply({ APP_LAYOUT[appName] })
             else
-                hs.layout.apply(APP_LAYOUT[appName])
+                hs.layout.apply({ APP_LAYOUT[appName][1][1] })
             end
         end
     end
-    spoon.D_HighlightFocus:watch(appName, eventType, appObject)
+    -- spoon.D_HighlightFocus:watch(appName, eventType, appObject)
 end
 
 appWatcher = hs.application.watcher.new(applicationWatcher)
@@ -145,6 +145,46 @@ hs.hotkey.bind(PUSH_KEY, 'forwarddelete', function()
         if (type(v[1]) == 'string') then
             hs.layout.apply({ v })
         else
+            local app = hs.application.get(v[1][1])
+            local appName = app:name();
+            if app then
+                -- 获取所有有效窗口
+                local windows = app:allWindows()
+                -- 遍历布局配置
+                for _, layoutConfig in ipairs(APP_LAYOUT[appName]) do
+                    local targetTitlePart = layoutConfig[2] or "" -- 获取配置中的标题部分
+                    local found = false
+
+                    -- 遍历窗口寻找匹配
+                    for _, win in ipairs(windows) do
+                        if not win:isMinimized() and win:isStandard() then
+                            local actualTitle = win:title()
+                            -- 模糊匹配逻辑（不区分大小写）
+                            if string.find(actualTitle:lower(), targetTitlePart:lower(), 1, true) then
+                                print("匹配到窗口: " .. actualTitle)
+                                -- 动态生成布局配置
+                                local dynamicLayout = {
+                                    {
+                                        layoutConfig[1], -- APP.Chrome
+                                        actualTitle,     -- 使用实际完整标题
+                                        layoutConfig[3], -- SCREEN
+                                        layoutConfig[4], -- rect
+                                        nil,
+                                        nil
+                                    }
+                                }
+                                hs.layout.apply(dynamicLayout)
+                                found = true
+                                break -- 每个配置项只匹配第一个符合条件的窗口
+                            end
+                        end
+                    end
+
+                    if not found then
+                        print("未找到匹配 " .. targetTitlePart .. " 的窗口")
+                    end
+                end
+            end
             hs.layout.apply(v)
         end
     end
