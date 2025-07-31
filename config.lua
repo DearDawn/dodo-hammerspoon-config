@@ -39,6 +39,8 @@ local LAYOUT = {
     ["right_top"] = { 0.5, 0, 0.5, 0.5 },
     ["right_bottom"] = { 0.5, 0.5, 0.5, 0.5 },
     ["left_4"] = { 0, 0, 0.4, 1 },
+    ["left_4_top"] = { 0, 0, 0.4, 0.6 },
+    ["left_4_bottom"] = { 0, 0.6, 0.4, 0.4 },
     ["right_6"] = { 0.4, 0, 0.6, 1 },
     ["top_5"] = { 0, 0, 1, 0.5 },
     ["bottom_5"] = { 0, 0.5, 1, 0.5 },
@@ -95,8 +97,10 @@ local APP_KEY = {
 
 local APP_LAYOUT = {
     [APP.Charles] = { APP.Charles, nil, SCREEN["MAC"], Utils.getHsRect(LAYOUT["bottom_middle"]), nil, nil },
-    [APP.Whalek] = { APP.Whalek, nil, SCREEN["MAC"], Utils.getHsRect(LAYOUT["left_5"]), nil, nil },
-    [APP.iTerm2] = { APP.iTerm2, nil, SCREEN["MAC"], Utils.getHsRect(LAYOUT["right_5"]), nil, nil },
+    [APP.Whalek] = { APP.Whalek, nil, SCREEN["MAC"], Utils.getHsRect(LAYOUT["right_6"]), nil, nil },
+    -- [APP.iTerm2] = { APP.iTerm2, nil, SCREEN["MAC"], Utils.getHsRect(LAYOUT["left_4"]), nil, nil },
+    [APP.iTerm2] = { APP.iTerm2, nil, SCREEN["MAC"], Utils.getHsRect(LAYOUT["left_4_bottom"]), nil, nil },
+    [APP._WeChat] = { APP._WeChat, nil, SCREEN["MAC"], Utils.getHsRect(LAYOUT["left_4_top"]), nil, nil },
     [APP._VSCode] = {
         { APP._VSCode, nil, SCREEN["XL"], Utils.getHsRect(LAYOUT.full), nil, nil },
         -- { nil,         "Assets", SCREEN.K1,    Utils.getHsRect(LAYOUT.left_4), nil, nil }
